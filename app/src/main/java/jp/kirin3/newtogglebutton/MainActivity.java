@@ -24,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        // 今回は意味ないが・・・
-        params.gravity= Gravity.RIGHT;
-        params.weight = 1.0f;
+        // どうやら動的なレイアウトでないと右に寄らない
+        params.gravity = Gravity.RIGHT;
 
         layout.addView(toggle,params);
 
         setContentView(layout);
+
+        /*
+        ViewGroup.MarginLayoutParams mparams = (ViewGroup.MarginLayoutParams)params;
+        mparams.setMargins(0, 0, 100, 0);
+        layout.addView(toggle,mparams);
+        */
     }
 }
